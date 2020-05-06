@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Productos from './components/Productos';
 
 const date = new Date().getFullYear();
 
@@ -12,9 +13,12 @@ function App() {
     { id: 4, name: 'boss', price: 60 },
   ]);
   // console.log(productos);
+
   return (
     <div>
       <Header title="Tienda Virtual" />
+      <br />
+      <Productos productos={productos} />
       <br />
       <Footer date={date} />
     </div>
