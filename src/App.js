@@ -17,8 +17,11 @@ function App() {
   return (
     <div>
       <Header title="Tienda Virtual" />
-      <br />
-      <Productos productos={productos} />
+      <h1>Lista de Productos</h1>
+      {productos.map((producto) => {
+        // cuando se usan las llaves es necesario mencionar a return o da error 
+       return <Productos productos={productos} />;
+      })}
       <br />
       <Footer date={date} />
     </div>
