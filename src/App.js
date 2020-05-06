@@ -17,7 +17,7 @@ function App() {
   return (
     <div>
       <Header title="Tienda Virtual" />
-      <h2>Lista de Productos</h2>
+      <h1>Lista de Productos</h1>
       {productos.map((producto) => (
         <Producto key={producto.id} producto={producto} productos={productos} />
       ))}
