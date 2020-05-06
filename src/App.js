@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 const date = new Date().getFullYear();
 
 function App() {
+  const [productos, cargarProductos] = useState([
+    { id: 1, name: 'levis', price: 30 },
+    { id: 2, name: 'kenzo', price: 40 },
+    { id: 3, name: 'zaara', price: 50 },
+    { id: 4, name: 'boss', price: 60 },
+  ]);
+  // console.log(productos);
   return (
     <div>
       <Header title="Tienda Virtual" />
