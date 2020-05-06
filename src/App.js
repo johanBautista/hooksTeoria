@@ -14,15 +14,23 @@ function App() {
     { id: 4, name: 'boss', price: 60 },
   ]);
 
+  const [carrito, agregarProducto] = useState([]);
+
   return (
     <div>
       <Header title="Tienda Virtual" />
       <h1>Lista de Productos</h1>
       {productos.map((producto) => (
-        <Producto key={producto.id} producto={producto} productos={productos} />
+        <Producto
+          key={producto.id}
+          producto={producto}
+          productos={productos}
+          carrito={carrito}
+          agregarProducto={agregarProducto}
+        />
       ))}
       <br />
-      <Carrito />
+      <Carrito carrito={carrito} agregarProducto={agregarProducto} />
       <Footer date={date} />
     </div>
   );

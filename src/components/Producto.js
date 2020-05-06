@@ -17,8 +17,16 @@ const Articulo = styled.section`
   color: #093434;
   width: 300px;
 `;
-const Producto = ({ producto, productos }) => {
+const Producto = ({ producto, productos, carrito, agregarProducto }) => {
   const { id, name, price } = producto;
+
+  const seleccionarProducto = (id) => {
+    // console.log('hola');
+
+    const producto = productos.filter((producto) => producto.id === id)[0];
+
+    agregarProducto([...carrito, producto]);
+  };
 
   return (
     <Articulo>
@@ -27,7 +35,9 @@ const Producto = ({ producto, productos }) => {
         {price}
         <small>eur</small>
       </b>
-      <Button>Comprar</Button>
+      <Button onClick={() => seleccionarProducto(id)} type="button">
+        Comprar
+      </Button>
     </Articulo>
   );
 };
